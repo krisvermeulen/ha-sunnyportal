@@ -1,0 +1,7 @@
+{
+  "domain": "sunnyportal",
+  "name": "Sunny Portal",
+  "documentation": "https://www.home-assistant.io/integrations/qnap",
+  "requirements": ["sunnyportal-py==0.0.4"],
+  "codeowners": []
+}
