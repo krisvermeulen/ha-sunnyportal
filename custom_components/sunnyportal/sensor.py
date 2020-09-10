@@ -29,7 +29,7 @@ SENSOR_TYPES = {
         "Sunny Portal Energy Generated Today",
         "mdi:white-balance-sunny",
     ],
-    "ovetall_generated_energy": [
+    "overall_generated_energy": [
         "Sunny Portal Total Energy Generated",
         "mdi:white-balance-sunny",
     ],
@@ -98,17 +98,12 @@ class SunnyPortalSensor(Entity):
         """Initialize the sensor."""
         self.plant_name = plant_name
         self.type = sensor_type
-        self._unique_id = f"sunnyportal {self.plant_name} {sensor_type}"
+        self.entity_id = f"sunnyportal.{self.plant_name}_{sensor_type}".lower()
         self._name = SENSOR_TYPES[sensor_type][0]
         self._icon = SENSOR_TYPES[sensor_type][1]
         self._unit_of_measurement = None
         self._state = None
         self._api = api
-
-    @property
-    def unique_id(self):
-        """Return unique ID for sensor."""
-        return self._unique_id
 
     @property
     def name(self):
