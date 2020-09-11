@@ -139,7 +139,7 @@ class SunnyPortalSensor(Entity):
         if self.type == "day_generated_energy":
             self._state = self._api.data[self.plant_name]["day_energy"]
             self._unit_of_measurement = self._api.data[self.plant_name]["unit_of_measurement"]
-        elif self.type == "ovetall_generated_energy":
+        elif self.type == "overall_generated_energy":
             self._state = self._api.data[self.plant_name]["absolute_energy"]
             self._unit_of_measurement = self._api.data[self.plant_name]["unit_of_measurement"]
 
